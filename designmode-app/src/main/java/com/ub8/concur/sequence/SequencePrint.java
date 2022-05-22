@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2022 Baidu, Inc. All Rights Reserved.
  */
-package com.ub8.concur;
+package com.ub8.concur.sequence;
 
 /**
  * 三个不同的线程 A、B、C 将会共用一个 Foo 实例。
@@ -26,7 +26,7 @@ public class SequencePrint {
             new Thread(()->{
                 try {
                     foo.printFirst();
-                } catch (InterruptedException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }).start();

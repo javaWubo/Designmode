@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2022 Baidu, Inc. All Rights Reserved.
  */
-package com.ub8.concur;
+package com.ub8.concur.sequence;
 
 import java.util.concurrent.Semaphore;
 
@@ -16,23 +16,15 @@ public class Foo {
         two.release();
     }
 
-    public void printSecond(){
-        try {
+    public void printSecond() throws InterruptedException {
             two.acquire();
             System.out.println("second");
             three.release();
-        } catch (InterruptedException e) {
-
-        }
     }
 
-    public void printThree(){
-        try {
+    public void printThree() throws InterruptedException {
             three.acquire();
             System.out.println("three");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
 
